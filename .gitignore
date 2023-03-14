@@ -1,0 +1,4 @@
+env.py
+sample_data/*
+ethicsandboards/*
+__pycache__/*
