@@ -11,7 +11,11 @@ This repository contains prototype code for a question answering system. See the
     source prototypeQA/bin/activate
     pip install -r requirements.txt
     ```
-- Get an OpenAI API Key from https://platform.openai.com/docs/quickstart/build-your-application.
+- Get an OpenAI API Key from https://platform.openai.com/docs/quickstart/build-your-application and create a file `env.py` with the API Key.
+- Run the code: 
+```
+python3 qa.py
+```
 
 # Diagram
-![Diagram](example_process_diagram.jpeg)
+![Diagram](PrototypeQA.jpeg)

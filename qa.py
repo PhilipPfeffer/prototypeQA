@@ -1,5 +1,5 @@
 import os
-from PyPDF2 import PdfReader
+from pypdf import PdfReader
 import openai
 import env  # This is a file that contains the OpenAI API key
 from collections import defaultdict
@@ -42,12 +42,13 @@ for pdf_file in os.listdir(pdf_directory):
 
                 answer = response["choices"][0]["message"]["content"].strip()
 
-                if answer != "NONE" and answer != "'NONE'":
+                #  If answer to lower case contains "none", skip it
+                if "none" not in answer.lower():
                     all_answers[question].append(answer)
 
             # 7. Find the most likely answer for each question
             potential_answers = ', '.join(all_answers[question])
-            prompt = f"Here are potential answers to the question '{question}', which is most likely to be correct given frequency of appearance? Potential answers: {potential_answers}"
+            prompt = f"Here are potential answers to the question '{question}', which is most likely to be correct given frequency of appearance? Respond with only the answer and no explanatory text. Potential answers: [{potential_answers}]"
             response = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
                 messages=[

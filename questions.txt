@@ -1,0 +1,3 @@
+What is the name of the company?
+What is the name of the company's CEO?
+What is the salary of the CEO?
