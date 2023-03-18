@@ -18,4 +18,4 @@ python3 qa.py
 ```
 
 # Diagram
-![Diagram](PrototypeQA.jpeg)
+![Diagram](PrototypeQA.jpg)
